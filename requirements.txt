@@ -1,0 +1,13 @@
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+pyyaml>=6.0
+pyarrow>=14.0
+datasets>=2.16
+openai>=1.12
+matplotlib>=3.8
+python-dotenv>=1.0
+pytest>=8.0
+# Optional, only for the hierarchical Bayesian interval (lazy-imported):
+# numpyro>=0.13
+# jax>=0.4

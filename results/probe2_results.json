@@ -1,0 +1,1352 @@
+[
+ {
+  "id": "meta-llama/Llama-3.2-1B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.2-1B-Instruct. Please visit https://api.together.ai/models/meta-llama/Llama-3.2-1B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.2-3B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.2-3B-Instruct. Please visit https://api.together.ai/models/meta-llama/Llama-3.2-3B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.2-1B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.2-1B. Please visit https://api.together.ai/models/meta-llama/Llama-3.2-1B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.2-3B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.2-3B. Please visit https://api.together.ai/models/meta-llama/Llama-3.2-3B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3-8B-Instruct. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3-8B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3-8b-chat-hf",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3-8b-chat-hf. Please visit https://api.together.ai/models/meta-llama/Llama-3-8b-chat-hf to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3.1-8B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3.1-8B. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3.1-8B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-7B-Instruct-Turbo. Please visit https://api.together.ai/models/Qwen/Qwen2.5-7B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-7B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-7B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-7B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-7B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-7B. Please visit https://api.together.ai/models/Qwen/Qwen2.5-7B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mistral-7B-Instruct-v0.3. Please visit https://api.together.ai/models/mistralai/Mistral-7B-Instruct-v0.3 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mistral-7B-Instruct-v0.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mistral-7B-Instruct-v0.1. Please visit https://api.together.ai/models/mistralai/Mistral-7B-Instruct-v0.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mistral-7B-v0.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mistral-7B-v0.1. Please visit https://api.together.ai/models/mistralai/Mistral-7B-v0.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-1.5B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-1.5B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2-1.5B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-1.5B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-1.5B. Please visit https://api.together.ai/models/Qwen/Qwen2-1.5B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-1.5B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-1.5B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-1.5B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-1.5B. Please visit https://api.together.ai/models/Qwen/Qwen2.5-1.5B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-3B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-3B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-3B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-2-9b-it",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for google/gemma-2-9b-it is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-2-27b-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-2-27b-it. Please visit https://api.together.ai/models/google/gemma-2-27b-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-2b-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-2b-it. Please visit https://api.together.ai/models/google/gemma-2b-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-1b-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-1b-it. Please visit https://api.together.ai/models/google/gemma-3-1b-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-4b-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-4b-it. Please visit https://api.together.ai/models/google/gemma-3-4b-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-27b-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-27b-it. Please visit https://api.together.ai/models/google/gemma-3-27b-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-2-7b-chat-hf",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-2-7b-chat-hf. Please visit https://api.together.ai/models/meta-llama/Llama-2-7b-chat-hf to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 44,
+  "prompt_tokens": 45,
+  "text_preview": "#### 4",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "moonshotai/Kimi-K3.1-Pro",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 100,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "meta-models/Muse-Spark-Open-816B-A42B",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 159,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "zai-org/GLM-5.3",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 27,
+  "text_preview": "2",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "zai-org/GLM-5.3-Flash",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 27,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "reflection/Beam-1.0-501B-A23B",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 54,
+  "prompt_tokens": 61,
+  "text_preview": "#### 4",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 31,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "zai-org/GLM-5.2",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 27,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "ricursive-ai/Ripple-65B-Preview",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 59,
+  "prompt_tokens": 23,
+  "text_preview": "\n#### 4",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 42,
+  "prompt_tokens": 19,
+  "text_preview": "#### 4",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "meta-models/Muse-Glimmer-30B",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 71,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "thinkingmachines/Inkling",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 30,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "Qwen/Qwen3.8-Flash",
+  "status": "other-error",
+  "error": "PermissionDeniedError: Error code: 403 - This model sends your prompts to a third-party provider, and your organization has not enabled third-party data sharing. Enable it at https://api.together.ai/settings/privacy, or choose a model served by Together.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.7-Max",
+  "status": "other-error",
+  "error": "PermissionDeniedError: Error code: 403 - This model sends your prompts to a third-party provider, and your organization has not enabled third-party data sharing. Enable it at https://api.together.ai/settings/privacy, or choose a model served by Together.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "openai/gpt-oss-120b",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 84,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "arize-ai/qwen-2-1.5b-instruct",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 8,
+  "prompt_tokens": 34,
+  "text_preview": "2+2 equals 4.",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "Qwen/Qwen3.6-Plus",
+  "status": "other-error",
+  "error": "PermissionDeniedError: Error code: 403 - This model sends your prompts to a third-party provider, and your organization has not enabled third-party data sharing. Enable it at https://api.together.ai/settings/privacy, or choose a model served by Together.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.7-Plus",
+  "status": "other-error",
+  "error": "PermissionDeniedError: Error code: 403 - This model sends your prompts to a third-party provider, and your organization has not enabled third-party data sharing. Enable it at https://api.together.ai/settings/privacy, or choose a model served by Together.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Prism-ML/Ternary-Bonsai-27B",
+  "status": "works",
+  "finish_reason": "length",
+  "completion_tokens": 64,
+  "prompt_tokens": 25,
+  "text_preview": "",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "elorian-labs/glimpse-1.0",
+  "status": "works",
+  "finish_reason": "stop",
+  "completion_tokens": 45,
+  "prompt_tokens": 67,
+  "text_preview": "#### 4",
+  "empty_or_fragment": true,
+  "error": null
+ },
+ {
+  "id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mixtral-8x7B-Instruct-v0.1. Please visit https://api.together.ai/models/mistralai/Mixtral-8x7B-Instruct-v0.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO. Please visit https://api.together.ai/models/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/deepseek-coder-33b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/deepseek-coder-33b-instruct. Please visit https://api.together.ai/models/deepseek-ai/deepseek-coder-33b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3-70B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3-70B-Instruct-Turbo. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3-70B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-72B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-72B. Please visit https://api.together.ai/models/Qwen/Qwen2-72B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-7B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-7B. Please visit https://api.together.ai/models/Qwen/Qwen2-7B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-72B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-72B-Instruct-Turbo. Please visit https://api.together.ai/models/Qwen/Qwen2.5-72B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/Llama-3.1-Nemotron-70B-Instruct-HF. Please visit https://api.together.ai/models/nvidia/Llama-3.1-Nemotron-70B-Instruct-HF to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-Coder-32B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-Coder-32B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.3-70B-Instruct-Turbo. Please visit https://api.together.ai/models/meta-llama/Llama-3.3-70B-Instruct-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.1-405B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.1-405B-Instruct. Please visit https://api.together.ai/models/meta-llama/Llama-3.1-405B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-72B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-72B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-72B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-14B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-14B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-14B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-VL-72B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-VL-72B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2-VL-72B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-R1-Distill-Llama-70B. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-R1-Distill-Llama-70B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-R1-Distill-Qwen-14B. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mistral-Small-24B-Instruct-2501",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mistral-Small-24B-Instruct-2501. Please visit https://api.together.ai/models/mistralai/Mistral-Small-24B-Instruct-2501 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/QwQ-32B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/QwQ-32B. Please visit https://api.together.ai/models/Qwen/QwQ-32B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/meta/llama-3.2-11b-vision-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/meta/llama-3.2-11b-vision-instruct. Please visit https://api.together.ai/models/nim/meta/llama-3.2-11b-vision-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/meta/llama-3.2-90b-vision-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/meta/llama-3.2-90b-vision-instruct. Please visit https://api.together.ai/models/nim/meta/llama-3.2-90b-vision-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/mistralai/mixtral-8x22b-instruct-v01",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/mistralai/mixtral-8x22b-instruct-v01. Please visit https://api.together.ai/models/nim/mistralai/mixtral-8x22b-instruct-v01 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/meta/llama-3.3-70b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/meta/llama-3.3-70b-instruct. Please visit https://api.together.ai/models/nim/meta/llama-3.3-70b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/nvidia/llama-3.1-nemotron-70b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/nvidia/llama-3.1-nemotron-70b-instruct. Please visit https://api.together.ai/models/nim/nvidia/llama-3.1-nemotron-70b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/meta/llama-3.1-8b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/meta/llama-3.1-8b-instruct. Please visit https://api.together.ai/models/nim/meta/llama-3.1-8b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/meta/llama-3.1-70b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/meta/llama-3.1-70b-instruct. Please visit https://api.together.ai/models/nim/meta/llama-3.1-70b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/nv-mistralai/mistral-nemo-12b-instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/nv-mistralai/mistral-nemo-12b-instruct. Please visit https://api.together.ai/models/nim/nv-mistralai/mistral-nemo-12b-instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/mistralai/mixtral-8x7b-instruct-v01",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/mistralai/mixtral-8x7b-instruct-v01. Please visit https://api.together.ai/models/nim/mistralai/mixtral-8x7b-instruct-v01 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nim/nvidia/llama-3.3-nemotron-super-49b-v1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nim/nvidia/llama-3.3-nemotron-super-49b-v1. Please visit https://api.together.ai/models/nim/nvidia/llama-3.3-nemotron-super-49b-v1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-VL-72B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-VL-72B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-VL-72B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-4-Scout-17B-16E-Instruct. Please visit https://api.together.ai/models/meta-llama/Llama-4-Scout-17B-16E-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepcogito/cogito-v1-preview-llama-8B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepcogito/cogito-v1-preview-llama-8B. Please visit https://api.together.ai/models/deepcogito/cogito-v1-preview-llama-8B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepcogito/cogito-v1-preview-qwen-32B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepcogito/cogito-v1-preview-qwen-32B. Please visit https://api.together.ai/models/deepcogito/cogito-v1-preview-qwen-32B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepcogito/cogito-v1-preview-qwen-14B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepcogito/cogito-v1-preview-qwen-14B. Please visit https://api.together.ai/models/deepcogito/cogito-v1-preview-qwen-14B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepcogito/cogito-v1-preview-llama-70B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepcogito/cogito-v1-preview-llama-70B. Please visit https://api.together.ai/models/deepcogito/cogito-v1-preview-llama-70B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepcogito/cogito-v1-preview-llama-70B-Turbo",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepcogito/cogito-v1-preview-llama-70B-Turbo. Please visit https://api.together.ai/models/deepcogito/cogito-v1-preview-llama-70B-Turbo to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2-72B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2-72B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2-72B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.3-70B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.3-70B-Instruct. Please visit https://api.together.ai/models/meta-llama/Llama-3.3-70B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-32B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-32B. Please visit https://api.together.ai/models/Qwen/Qwen2.5-32B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-72B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-72B. Please visit https://api.together.ai/models/Qwen/Qwen2.5-72B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-14B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-14B. Please visit https://api.together.ai/models/Qwen/Qwen2.5-14B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Meta-Llama-3.1-70B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Meta-Llama-3.1-70B. Please visit https://api.together.ai/models/meta-llama/Meta-Llama-3.1-70B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen2.5-32B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen2.5-32B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen2.5-32B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.1-405B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.1-405B. Please visit https://api.together.ai/models/meta-llama/Llama-3.1-405B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "agentica-org/DeepCoder-14B-Preview",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for agentica-org/DeepCoder-14B-Preview is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Devstral-Small-2505",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for mistralai/Devstral-Small-2505 is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for mistralai/Mixtral-8x22B-Instruct-v0.1 is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "allenai/Molmo-7B-D-0924",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model allenai/Molmo-7B-D-0924. Please visit https://api.together.ai/models/allenai/Molmo-7B-D-0924 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-8B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-8B. Please visit https://api.together.ai/models/Qwen/Qwen3-8B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-14B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-14B. Please visit https://api.together.ai/models/Qwen/Qwen3-14B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-0.6B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-0.6B. Please visit https://api.together.ai/models/Qwen/Qwen3-0.6B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-0.6B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-0.6B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-0.6B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-1.7B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-1.7B. Please visit https://api.together.ai/models/Qwen/Qwen3-1.7B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-1.7B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-1.7B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-1.7B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-4B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-4B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-4B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-14B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-14B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-14B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-30B-A3B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-30B-A3B. Please visit https://api.together.ai/models/Qwen/Qwen3-30B-A3B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-30B-A3B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-30B-A3B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-30B-A3B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-4-Scout-17B-16E",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-4-Scout-17B-16E. Please visit https://api.together.ai/models/meta-llama/Llama-4-Scout-17B-16E to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Magistral-Small-2506",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Magistral-Small-2506. Please visit https://api.together.ai/models/mistralai/Magistral-Small-2506 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "MiniMaxAI/MiniMax-M1-40k",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for MiniMaxAI/MiniMax-M1-40k is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "MiniMaxAI/MiniMax-M1-80k",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for MiniMaxAI/MiniMax-M1-80k is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mixtral-8x7B-v0.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mixtral-8x7B-v0.1. Please visit https://api.together.ai/models/mistralai/Mixtral-8x7B-v0.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "togethercomputer/meta-llama-3.1-8B-Instruct-AWQ-INT4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model togethercomputer/meta-llama-3.1-8B-Instruct-AWQ-INT4. Please visit https://api.together.ai/models/togethercomputer/meta-llama-3.1-8B-Instruct-AWQ-INT4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "sarvamai/sarvam-m",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - The dedicated endpoint for sarvamai/sarvam-m is not running. Please visit https://api.together.ai/models to start the endpoint.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-R1-0528",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-R1-0528. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-R1-0528 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-32B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-32B. Please visit https://api.together.ai/models/Qwen/Qwen3-32B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-235B-A22B-Instruct-2507-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3-235B-A22B-Instruct-2507-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.5-Air-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.5-Air-FP8. Please visit https://api.together.ai/models/zai-org/GLM-4.5-Air-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Coder-30B-A3B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen3-Coder-30B-A3B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "openai/gpt-oss-20b",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model openai/gpt-oss-20b. Please visit https://api.together.ai/models/openai/gpt-oss-20b to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-4B-Instruct-2507",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-4B-Instruct-2507. Please visit https://api.together.ai/models/Qwen/Qwen3-4B-Instruct-2507 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-8B-Base",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-8B-Base. Please visit https://api.together.ai/models/Qwen/Qwen3-8B-Base to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-V3.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-V3.1. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-V3.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Next-80B-A3B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen3-Next-80B-A3B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Next-80B-A3B-Thinking. Please visit https://api.together.ai/models/Qwen/Qwen3-Next-80B-A3B-Thinking to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.5V",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.5V. Please visit https://api.together.ai/models/zai-org/GLM-4.5V to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/NVIDIA-Nemotron-Nano-9B-v2. Please visit https://api.together.ai/models/nvidia/NVIDIA-Nemotron-Nano-9B-v2 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Next-80B-A3B-Instruct-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Next-80B-A3B-Instruct-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3-Next-80B-A3B-Instruct-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-270m-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-270m-it. Please visit https://api.together.ai/models/google/gemma-3-270m-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-VL-8B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-VL-8B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen3-VL-8B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.6",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.6. Please visit https://api.together.ai/models/zai-org/GLM-4.6 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/medgemma-27b-text-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/medgemma-27b-text-it. Please visit https://api.together.ai/models/google/medgemma-27b-text-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-VL-32B-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-VL-32B-Instruct. Please visit https://api.together.ai/models/Qwen/Qwen3-VL-32B-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "MiniMaxAI/MiniMax-M2",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model MiniMaxAI/MiniMax-M2. Please visit https://api.together.ai/models/MiniMaxAI/MiniMax-M2 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-VL-235B-A22B-Instruct-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-VL-235B-A22B-Instruct-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3-VL-235B-A22B-Instruct-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-1b-pt",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-1b-pt. Please visit https://api.together.ai/models/google/gemma-3-1b-pt to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "arcee-ai/trinity-mini",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model arcee-ai/trinity-mini. Please visit https://api.together.ai/models/arcee-ai/trinity-mini to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Ministral-3-14B-Instruct-2512",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Ministral-3-14B-Instruct-2512. Please visit https://api.together.ai/models/mistralai/Ministral-3-14B-Instruct-2512 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "togethercomputer/EssentialAI-RNJ-1-Instruct",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model togethercomputer/EssentialAI-RNJ-1-Instruct. Please visit https://api.together.ai/models/togethercomputer/EssentialAI-RNJ-1-Instruct to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16. Please visit https://api.together.ai/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.7",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.7. Please visit https://api.together.ai/models/zai-org/GLM-4.7 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-Coder-Next-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-Coder-Next-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3-Coder-Next-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "moonshotai/Kimi-K2.5-fp4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model moonshotai/Kimi-K2.5-fp4. Please visit https://api.together.ai/models/moonshotai/Kimi-K2.5-fp4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-27b-pt",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-27b-pt. Please visit https://api.together.ai/models/google/gemma-3-27b-pt to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.7-fp4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.7-fp4. Please visit https://api.together.ai/models/zai-org/GLM-4.7-fp4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5-FP4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5-FP4. Please visit https://api.together.ai/models/zai-org/GLM-5-FP4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5. Please visit https://api.together.ai/models/zai-org/GLM-5 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "MiniMaxAI/MiniMax-M2.5-FP4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model MiniMaxAI/MiniMax-M2.5-FP4. Please visit https://api.together.ai/models/MiniMaxAI/MiniMax-M2.5-FP4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-397B-A17B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-397B-A17B. Please visit https://api.together.ai/models/Qwen/Qwen3.5-397B-A17B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-4.7-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-4.7-FP8. Please visit https://api.together.ai/models/zai-org/GLM-4.7-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-9B-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-9B-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3.5-9B-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-35B-A3B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-35B-A3B. Please visit https://api.together.ai/models/Qwen/Qwen3.5-35B-A3B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8. Please visit https://api.together.ai/models/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "deepseek-ai/DeepSeek-OCR-2",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model deepseek-ai/DeepSeek-OCR-2. Please visit https://api.together.ai/models/deepseek-ai/DeepSeek-OCR-2 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-122B-A10B-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-122B-A10B-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3.5-122B-A10B-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-OCR",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-OCR. Please visit https://api.together.ai/models/zai-org/GLM-OCR to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-8B-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-8B-Lora. Please visit https://api.together.ai/models/Qwen/Qwen3-8B-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3-30B-A3B-Instruct-2507-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3-30B-A3B-Instruct-2507-Lora. Please visit https://api.together.ai/models/Qwen/Qwen3-30B-A3B-Instruct-2507-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Hcompany/Holo3-35B-A3B",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Hcompany/Holo3-35B-A3B. Please visit https://api.together.ai/models/Hcompany/Holo3-35B-A3B to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-31B-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-31B-it. Please visit https://api.together.ai/models/google/gemma-4-31B-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5.1",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5.1. Please visit https://api.together.ai/models/zai-org/GLM-5.1 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. Please visit https://api.together.ai/models/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "MiniMaxAI/MiniMax-M2.7",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model MiniMaxAI/MiniMax-M2.7. Please visit https://api.together.ai/models/MiniMaxAI/MiniMax-M2.7 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-E4B-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-E4B-it. Please visit https://api.together.ai/models/google/gemma-4-E4B-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-26B-A4B-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-26B-A4B-it. Please visit https://api.together.ai/models/google/gemma-4-26B-A4B-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "moonshotai/Kimi-K2.6",
+  "status": "other-error",
+  "error": "BadRequestError: Error code: 400 - No deployments are ready to serve this endpoint; all configured deployments are stopped. Start one to enable traffic.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-E2B-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-E2B-it. Please visit https://api.together.ai/models/google/gemma-4-E2B-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.6-35B-A3B-FP8. Please visit https://api.together.ai/models/Qwen/Qwen3.6-35B-A3B-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-fp8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-fp8. Please visit https://api.together.ai/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-fp8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-3.3-70B-Instruct-FP8-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-3.3-70B-Instruct-FP8-Lora. Please visit https://api.together.ai/models/meta-llama/Llama-3.3-70B-Instruct-FP8-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "mistralai/Mixtral-8x7B-Instruct-v0.1-FP8-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model mistralai/Mixtral-8x7B-Instruct-v0.1-FP8-Lora. Please visit https://api.together.ai/models/mistralai/Mixtral-8x7B-Instruct-v0.1-FP8-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-270m-it-lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-270m-it-lora. Please visit https://api.together.ai/models/google/gemma-3-270m-it-lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct-FP8-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-4-Scout-17B-16E-Instruct-FP8-Lora. Please visit https://api.together.ai/models/meta-llama/Llama-4-Scout-17B-16E-Instruct-FP8-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-3-27b-it-lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-3-27b-it-lora. Please visit https://api.together.ai/models/google/gemma-3-27b-it-lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-31B-it-lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-31B-it-lora. Please visit https://api.together.ai/models/google/gemma-4-31B-it-lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP4",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP4. Please visit https://api.together.ai/models/meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP4 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "nvidia/nemotron-3-ultra-550b-a55b",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model nvidia/nemotron-3-ultra-550b-a55b. Please visit https://api.together.ai/models/nvidia/nemotron-3-ultra-550b-a55b to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-35B-A3B-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-35B-A3B-Lora. Please visit https://api.together.ai/models/Qwen/Qwen3.5-35B-A3B-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "moonshotai/Kimi-K2.7-Code",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model moonshotai/Kimi-K2.7-Code. Please visit https://api.together.ai/models/moonshotai/Kimi-K2.7-Code to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.5-2B-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.5-2B-Lora. Please visit https://api.together.ai/models/Qwen/Qwen3.5-2B-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "Qwen/Qwen3.6-35B-A3B-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model Qwen/Qwen3.6-35B-A3B-Lora. Please visit https://api.together.ai/models/Qwen/Qwen3.6-35B-A3B-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "google/gemma-4-12B-it",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model google/gemma-4-12B-it. Please visit https://api.together.ai/models/google/gemma-4-12B-it to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5.2-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5.2-FP8. Please visit https://api.together.ai/models/zai-org/GLM-5.2-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5.2-FP8-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5.2-FP8-Lora. Please visit https://api.together.ai/models/zai-org/GLM-5.2-FP8-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5.3-FP8",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5.3-FP8. Please visit https://api.together.ai/models/zai-org/GLM-5.3-FP8 to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ },
+ {
+  "id": "zai-org/GLM-5.3-FP8-Lora",
+  "status": "non-serverless",
+  "error": "BadRequestError: Error code: 400 - Unable to access non-serverless model zai-org/GLM-5.3-FP8-Lora. Please visit https://api.together.ai/models/zai-org/GLM-5.3-FP8-Lora to create and start a new dedicated endpoint for the model.",
+  "finish_reason": null,
+  "completion_tokens": null
+ }
+]

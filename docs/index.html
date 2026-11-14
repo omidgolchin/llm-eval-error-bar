@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Error Bars for LLM Evals — which intervals actually cover?</title>
+<script src="kit-theme.js"></script>
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* Tool-specific only (kit.css carries everything else). */
+  .verdict-bad { color: var(--bad); }
+  .verdict-good { color: var(--good); }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<main>
+  <header class="kit-header">
+    <div class="kit-header-top">
+      <p class="kit-kicker">Omid Golchin · learning tools</p>
+      <button class="kit-theme-toggle" type="button" data-kit-theme-toggle
+        aria-label="Toggle light/dark mode">◐ Theme</button>
+    </div>
+    <h1>Error Bars for LLM Evals</h1>
+    <p class="kit-tagline">Evaluate a model on N questions with K runs
+    (seeds) per question, report a “95%” interval — and the interval
+    covers the true accuracy far less than 95% of the time, if it is
+    the pooled interval everyone reaches for. Every number on this
+    page comes from 6,000 real GSM8K runs (3 models × 400 questions
+    × 5 seeds). Pick a design and see which intervals hold up.</p>
+  </header>
+
+  <div class="card">
+    <h3>Try it: the coverage explorer</h3>
+    <div class="ctl-grid">
+      <label>Model
+        <select id="sel-model"></select></label>
+      <label>Interval method
+        <select id="sel-method"></select></label>
+      <label>Questions (N)
+        <select id="sel-n"></select></label>
+      <label>Seeds per question (K)
+        <select id="sel-k"></select></label>
+    </div>
+    <p class="muted" id="method-note"></p>
+    <div class="stats">
+      <div class="stat"><span class="value" id="st-cov">–</span><span class="label">empirical coverage (nominal 0.95)</span></div>
+      <div class="stat"><span class="value" id="st-width">–</span><span class="label">median interval width</span></div>
+      <div class="stat"><span class="value" id="st-verdict">–</span><span class="label">verdict (PLAN §9 rule)</span></div>
+      <div class="stat"><span class="value" id="st-ref">–</span><span class="label">model's reference accuracy</span></div>
+    </div>
+    <p class="muted" id="cov-note"></p>
+    <div class="callout callout--bad hidden" id="seedonly-note">
+      <strong>Different estimand.</strong> The seed-only interval treats
+      the questions as fixed: it is an interval for accuracy on
+      <em>these</em> questions only, not for new questions. Its low
+      coverage here is an estimand mismatch, not just a bad interval —
+      checked against its own fixed-question target, it covers 1.000.
+    </div>
+    <div class="chart"><canvas id="chart-cov"></canvas></div>
+    <p class="chart-caption" id="cov-chart-note"></p>
+  </div>
+
+  <div class="card">
+    <h3>The budget question: 250 calls — more questions, or more seeds?</h3>
+    <p>Fix the budget at 250 calls (the frozen plan's budget analysis)
+    and split it four ways: 250 questions × 1 seed, 125 × 2, 83 × 3,
+    or 50 × 5. The chart shows the median interval width each split
+    actually produced in the runs, against the width predicted from
+    the variance components. Same model as above.</p>
+    <div class="ctl-grid">
+      <label>Interval method
+        <select id="sel-bmethod"></select></label>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="value" id="st-best">–</span><span class="label">narrowest split</span></div>
+      <div class="stat"><span class="value" id="st-w1">–</span><span class="label">width at 250 × 1</span></div>
+      <div class="stat"><span class="value" id="st-w5">–</span><span class="label">width at 50 × 5</span></div>
+    </div>
+    <div class="chart"><canvas id="chart-budget"></canvas></div>
+    <p class="chart-caption" id="budget-note"></p>
+  </div>
+
+  <div class="card">
+    <h3>Why questions beat seeds</h3>
+    <p>An accuracy estimate varies for two reasons: questions differ
+    in difficulty (between-question variance, σ²<sub>q</sub>), and the
+    same question flips between runs (within-question variance,
+    σ²<sub>w</sub>). The variance of the estimate at design (N, K) is
+    σ²<sub>q</sub>/N + σ²<sub>w</sub>/(N·K). Extra seeds only shrink
+    the second term; extra questions shrink both. For these models the
+    first term dominates, so repeats are a poor buy:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Model</th><th>σ²<sub>q</sub> (between questions)</th>
+        <th>σ²<sub>w</sub> (within question)</th><th>Parse-failure rate</th></tr></thead>
+        <tbody id="vc-body"></tbody>
+      </table>
+    </div>
+    <p>Clustering uncertainty by question is not this project's idea:
+    it is the recommendation of Miller (2024), “Adding Error Bars to
+    Evals: A Statistical Approach to Language Model Evaluations”
+    (arXiv:2411.00640), and this project follows it. What is added
+    here is the empirical coverage check on real runs, the Bayesian
+    comparison, the budget guidance, and this playground. All numbers
+    are precomputed from the saved runs — the page makes no live
+    model calls.</p>
+  </div>
+
+  <footer class="kit-footer">
+    <nav class="kit-siblings" aria-label="More tools">
+      <span class="kit-siblings-label">More tools:</span>
+      <a href="https://omidgolchin.github.io/experiment-hazard-simulator/">Experiment Hazard Simulator</a> ·
+      <a href="https://omidgolchin.github.io/bayesian-ab-lab/">Bayesian A/B Lab</a> ·
+      <a href="https://omidgolchin.github.io/queue-simulator/">Queue Simulator</a>
+    </nav>
+    <p>Built by Omid Golchin. Shared design:
+      <a href="https://github.com/omidgolchin/omid-tools-kit">omid-tools-kit</a>.</p>
+  </footer>
+  <p class="muted small">
+    Built to learn evaluation statistics by checking intervals against
+    real runs. Full write-up: <a href="../README.md">README</a> ·
+    frozen plan: <a href="../PLAN.md">PLAN.md</a> · full results:
+    <a href="../results/summary.md">results/summary.md</a>.
+    References: Miller (2024), “Adding Error Bars to Evals: A
+    Statistical Approach to Language Model Evaluations”,
+    arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to
+    Solve Math Word Problems” (GSM8K), arXiv:2110.14168. Models run
+    through Together AI serverless, temperature 0.7, one fixed prompt.
+  </p>
+</main>
+<script src="kit-chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

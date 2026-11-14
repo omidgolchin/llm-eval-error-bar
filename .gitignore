@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+outputs/raw/*.jsonl
+outputs/*.jsonl
+.pytest_cache/
+results/bayes_cache/
+
+*.egg-info/
