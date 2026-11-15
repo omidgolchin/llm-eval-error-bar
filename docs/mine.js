@@ -80,7 +80,7 @@
       : check("is-ok", "QUESTIONS", n + " questions.", "Enough for the interval's approximations to hold."));
     if (!cmp && kbar > 1) {
       var narrow = 1 - nA.half / A.half;
-      checks.push(check(narrow > 0.15 ? "is-warn" : "is-ok", "NAIVE", "The usual interval would be " + (narrow > 0 ? Math.round(100 * narrow) + "% too narrow." : "about the same."),
+      checks.push(check(narrow > 0.15 ? "is-warn" : "is-ok", "USUAL INTERVAL", "The usual interval would be " + (narrow > 0 ? Math.round(100 * narrow) + "% too narrow." : "about the same."),
         "Treating all " + A.total.toLocaleString("en-US") + " runs as independent gives ±" + pts(nA.half) + " points. Runs of one question share its difficulty, so they are not independent evidence; see <i>Why it matters</i> for what that does to coverage."));
     }
     var next = nextBuy(pa.rows, A, vcA, level);
