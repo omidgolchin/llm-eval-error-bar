@@ -70,27 +70,24 @@
       label: methodInfo(state.method).name + " — coverage",
       color: "accent", markers: true,
       points: selPoints.map(function (p) { return [p.k, p.r.coverage]; }),
-      ci: selPoints.map(function (p) {
-        return (p.r.mc_upper - p.r.mc_lower) / 2;
-      })
+      ci: selPoints.map(function (p) { return [p.r.mc_lower, p.r.mc_upper]; })
     });
     if (state.method !== "naive") {
       series.push({
         label: "Naive — pooled Wilson — coverage",
-        color: "series2", dash: true, markers: true,
+        color: "series2", dash: "5 4", markers: true,
         points: KS.map(function (k) {
           var r = covRow(state.model, "naive", state.N, k);
           return [k, r.coverage];
         })
       });
     }
-    series.push({
-      label: "nominal 0.95", color: "bad", dash: true,
-      points: [[1, 0.95], [5, 0.95]]
-    });
-    KitChart.makeLine($("chart-cov"), series, {
+    Tool.lineChart($("chart-cov"), {
+      series: series, legend: true, height: 280,
+      hLines: [{ y: 0.95, label: "nominal 0.95", color: "bad" }],
       xTitle: "seeds per question (K)", yTitle: "empirical coverage",
-      yMin: 0, yMax: 1, xDigits: 1, yDigits: 2
+      yMin: 0, yMax: 1, xTicks: KS,
+      xFormat: function (x) { return String(x); }, yFormat: function (y) { return y.toFixed(2); }
     });
     $("cov-chart-note").textContent =
       "Coverage across K at N = " + state.N + " questions for " + info.name +
@@ -112,19 +109,17 @@
     $("st-best").textContent = best.N + " x " + best.K;
     $("st-w1").textContent = num(w1.median_width);
     $("st-w5").textContent = num(w5.median_width);
-    KitChart.makeLine($("chart-budget"), [
-      {
-        label: "empirical median width", color: "accent", markers: true,
-        points: rows.map(function (r) { return [r.K, r.median_width]; })
-      },
-      {
-        label: "predicted from variance components", color: "neutral",
-        dash: true, markers: true,
-        points: rows.map(function (r) { return [r.K, r.predicted_width]; })
-      }
-    ], {
-      xTitle: "seeds per question (K) — N = 250/K questions",
-      yTitle: "median interval width", yMin: 0, xDigits: 1, yDigits: 2
+    Tool.lineChart($("chart-budget"), {
+      series: [
+        { label: "empirical median width", color: "accent", markers: true,
+          points: rows.map(function (r) { return [r.K, r.median_width]; }) },
+        { label: "predicted from variance components", color: "neutral", dash: "5 4", markers: true,
+          points: rows.map(function (r) { return [r.K, r.predicted_width]; }) }
+      ],
+      legend: true, height: 260, xTicks: rows.map(function (r) { return r.K; }),
+      xTitle: "seeds per question (K), with N = 250 / K questions",
+      yTitle: "median interval width", yMin: 0,
+      xFormat: function (x) { return String(x); }, yFormat: function (y) { return y.toFixed(2); }
     });
     var gain = (1 - w1.median_width / w5.median_width) * 100;
     $("budget-note").textContent =

@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the analysis dependencies (no model calls in tests)
+        run: pip install "numpy>=1.26" "pandas>=2.0" "scipy>=1.11" "pyyaml>=6.0" "pytest>=8.0"
+      - name: Run tests
+        run: PYTHONPATH=src pytest -q
+      - name: Smoke test the interval function on a tiny matrix
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import numpy as np
+          from errorbars.intervals import intervals
+          rng = np.random.default_rng(0)
+          mat = (rng.random((50, 5)) < rng.beta(2, 2, 50)[:, None]).astype(float)
+          out = intervals(mat, methods=["naive", "question_means", "cluster", "bootstrap"])
+          for m, r in out.items():
+              print(m, r)
+          PY

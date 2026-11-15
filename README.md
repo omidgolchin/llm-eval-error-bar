@@ -27,10 +27,10 @@ the same runs, practical budget guidance for splitting a fixed
 number of calls between questions and seeds, the reusable
 `errorbars.intervals` function, and an interactive playground.
 
-**Playground:** open `docs/index.html` (serve the folder, e.g.
-`python3 -m http.server` inside `docs/`) to explore the coverage
-and budget results interactively. Every number in it is exported
-from the results below — no live model calls.
+**Playground:** https://omidgolchin.github.io/llm-eval-error-bar/
+(or serve `docs/` locally) to explore the coverage and budget results
+interactively. Every number in it is exported from the results below;
+the page makes no model calls.
 
 ## The question
 

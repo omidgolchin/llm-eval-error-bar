@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -6,18 +6,18 @@
 <title>Error Bars for LLM Evals — which intervals actually cover?</title>
 <script src="kit-theme.js"></script>
 <link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="tool.css">
 <style>
   /* Tool-specific only (kit.css carries everything else). */
   .verdict-bad { color: var(--bad); }
   .verdict-good { color: var(--good); }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <main>
   <header class="kit-header">
     <div class="kit-header-top">
-      <p class="kit-kicker">Omid Golchin · learning tools</p>
+      <p class="kit-kicker">Omid Golchin · Studies</p>
       <button class="kit-theme-toggle" type="button" data-kit-theme-toggle
         aria-label="Toggle light/dark mode">◐ Theme</button>
     </div>
@@ -57,7 +57,7 @@
       coverage here is an estimand mismatch, not just a bad interval —
       checked against its own fixed-question target, it covers 1.000.
     </div>
-    <div class="chart"><canvas id="chart-cov"></canvas></div>
+    <div class="svgchart" id="chart-cov"></div>
     <p class="chart-caption" id="cov-chart-note"></p>
   </div>
 
@@ -77,7 +77,7 @@
       <div class="stat"><span class="value" id="st-w1">–</span><span class="label">width at 250 × 1</span></div>
       <div class="stat"><span class="value" id="st-w5">–</span><span class="label">width at 50 × 5</span></div>
     </div>
-    <div class="chart"><canvas id="chart-budget"></canvas></div>
+    <div class="svgchart" id="chart-budget"></div>
     <p class="chart-caption" id="budget-note"></p>
   </div>
 
@@ -108,28 +108,19 @@
   </div>
 
   <footer class="kit-footer">
-    <nav class="kit-siblings" aria-label="More tools">
-      <span class="kit-siblings-label">More tools:</span>
-      <a href="https://omidgolchin.github.io/experiment-hazard-simulator/">Experiment Hazard Simulator</a> ·
-      <a href="https://omidgolchin.github.io/bayesian-ab-lab/">Bayesian A/B Lab</a> ·
-      <a href="https://omidgolchin.github.io/queue-simulator/">Queue Simulator</a>
-    </nav>
-    <p>Built by Omid Golchin. Shared design:
-      <a href="https://github.com/omidgolchin/omid-tools-kit">omid-tools-kit</a>.</p>
+    <p class="kit-siblings"><span class="kit-siblings-label">More tools:</span>
+      <a href="https://omidgolchin.github.io/bayesian-ab-lab/">A/B Test Decision Tool</a> ·
+      <a href="https://omidgolchin.github.io/queue-simulator/">Call Center Staffing Planner</a> ·
+      <a href="https://omidgolchin.github.io/experiment-hazard-simulator/">Agent Eval Planner</a></p>
+    <p>Built by Omid Golchin · <a href="https://github.com/omidgolchin/llm-eval-error-bar">Write-up, frozen plan, code and runs</a> ·
+      <a href="https://github.com/omidgolchin/llm-eval-error-bar/blob/main/results/summary.md">Full results</a>.
+      Every number is precomputed from the saved runs; the page makes no model calls.</p>
+    <p class="small muted">References: Miller (2024), “Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations”,
+      arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to Solve Math Word Problems” (GSM8K), arXiv:2110.14168.
+      Models run through Together AI serverless, temperature 0.7, one fixed prompt.</p>
   </footer>
-  <p class="muted small">
-    Built to learn evaluation statistics by checking intervals against
-    real runs. Full write-up: <a href="../README.md">README</a> ·
-    frozen plan: <a href="../PLAN.md">PLAN.md</a> · full results:
-    <a href="../results/summary.md">results/summary.md</a>.
-    References: Miller (2024), “Adding Error Bars to Evals: A
-    Statistical Approach to Language Model Evaluations”,
-    arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to
-    Solve Math Word Problems” (GSM8K), arXiv:2110.14168. Models run
-    through Together AI serverless, temperature 0.7, one fixed prompt.
-  </p>
 </main>
-<script src="kit-chart.js"></script>
+<script src="tool-common.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
