@@ -1,15 +1,36 @@
-# Error bars for LLM evals: which intervals actually cover?
+# Error Bars for LLM Evals
 
-The interval everyone reaches for — pool all N × K runs and take a
-Wilson interval — covers the true accuracy only **0.69 to 0.80** of
-the time at the common 50 questions × 5 seeds design, against a 95%
-nominal level, and it gets *worse* as you add seeds. Given a fixed
-250-call budget, 250 questions × 1 seed beats 50 × 5 on interval
+For anyone who reports an LLM eval score: paste your results, one line per question, and get an error bar you can trust, a fair comparison of two models on the same questions, and whether your next runs should go to more questions or to more repeats of the same ones.
+
+![The tool on three inputs (one model, two models compared, one run per question), a plain-language explanation of a result, and the coverage check on 6,000 real runs](docs/hero.gif)
+
+![The tool on a desktop: the three-step guide, the pasted results with a hint under each input, and the error bar with its checks](docs/screenshots/desktop.png)
+
+**Use it:** https://omidgolchin.github.io/llm-eval-error-bar/ (runs in your browser; your results are never uploaded)
+
+## What it does
+
+- **My eval.** Paste per-question results (`1 0 1` for three runs, `pass fail`, or a count like `2/3`). You get the accuracy with an error bar clustered by question (cluster-robust standard error, t interval with N−1 degrees of freedom), the naive interval for contrast and how much too narrow it is, and how many independent answers your runs are really worth.
+- **Two models.** Add a second model's results on the same questions and get the paired difference with its interval, and how much narrower pairing makes it than comparing the two scores separately.
+- **What to buy next.** From your own runs, the noise is split into question difficulty (σ²q) and run-to-run flips (σ²w); the chart shows how fast the error bar narrows if the next runs go to new questions or to repeats, and the floor that repeats can never get below.
+- **Why it matters: real runs.** The second mode shows the evidence: on 6,000 real GSM8K runs, how often each interval method actually contains the model's true accuracy, and how a fixed budget is best split.
+- **Copy summary / Copy link.** A sentence for a paper or a report (estimate, interval, design, method), and a link that keeps your settings; your results stay on your device.
+- **Help where you need it.** Each mode opens with three steps saying what to enter and what you get; every input has a line under it; and every technical term has a **?** that opens a plain-language explanation.
+
+The calculator (`docs/evalbar.js`) is checked against this repository's Python package on random matrices (`tests/test_evalbar_js.py`): the same intervals to four decimals, the same variance components, and t quantiles within 0.2% of scipy.
+
+## The study behind it
+
+The interval everyone reaches for (pool all N × K runs and take a
+Wilson interval) covers the true accuracy only **0.69 to 0.80** of
+the time at the common 50 questions × 5 runs design, against a 95%
+nominal level, and it gets *worse* as you add runs. Given a fixed
+250-call budget, 250 questions × 1 run beats 50 × 5 on interval
 width for every model tested.
 
 I built this to learn how evaluation uncertainty actually works:
 run real models repeatedly, build several interval methods, and
-check each one against a known reference — subsample the runs
+check each one against a known reference: subsample the runs
 2,000 times per design and count how often the interval contains
 the truth. The methods that respect the question-level structure
 (cluster-robust, question-means, two-stage bootstrap) hold up; the
@@ -24,13 +45,9 @@ did not originate it. What this project adds is an empirical
 coverage check of several interval methods on real model runs (not
 only simulated data), a hierarchical Bayesian interval compared on
 the same runs, practical budget guidance for splitting a fixed
-number of calls between questions and seeds, the reusable
-`errorbars.intervals` function, and an interactive playground.
-
-**Playground:** https://omidgolchin.github.io/llm-eval-error-bar/
-(or serve `docs/` locally) to explore the coverage and budget results
-interactively. Every number in it is exported from the results below;
-the page makes no model calls.
+number of calls between questions and runs, the reusable
+`errorbars.intervals` function, and the tool above. In the tables
+below, "seeds" means repeated runs of the same question.
 
 ## The question
 

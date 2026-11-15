@@ -1,6 +1,6 @@
 /* Error Bars for LLM Evals — playground.
  *
- * Everything shown comes from data/results.json, exported from the
+ * The "Why it matters" mode. Everything shown comes from data/results.json, exported from the
  * Stage 4 results (results/coverage_*.csv, results/budget.csv,
  * results/summary.md) by scripts/export_playground_data.py. No live
  * model calls, no numbers computed in the browser beyond formatting.
@@ -50,7 +50,7 @@
     $("st-cov").textContent = pct(row.coverage);
     $("st-width").textContent = num(row.median_width);
     var v = $("st-verdict");
-    v.textContent = row.under_covers ? "UNDER-COVERS" : "holds up";
+    v.textContent = row.under_covers ? "Too narrow" : "Holds up";
     v.className = "value " + (row.under_covers ? "verdict-bad" : "verdict-good");
     $("st-ref").textContent = num(info.reference, 4);
     $("cov-note").textContent =
@@ -67,14 +67,14 @@
       return { k: k, r: r };
     });
     series.push({
-      label: methodInfo(state.method).name + " — coverage",
+      label: (({ naive: "Naive", question_means: "Question means + t", cluster: "Cluster-robust", bootstrap: "Bootstrap", bayes: "Bayesian", seed_only: "These questions only" })[state.method] || methodInfo(state.method).name) + ": coverage",
       color: "accent", markers: true,
       points: selPoints.map(function (p) { return [p.k, p.r.coverage]; }),
       ci: selPoints.map(function (p) { return [p.r.mc_lower, p.r.mc_upper]; })
     });
     if (state.method !== "naive") {
       series.push({
-        label: "Naive — pooled Wilson — coverage",
+        label: "Naive: coverage",
         color: "series2", dash: "5 4", markers: true,
         points: KS.map(function (k) {
           var r = covRow(state.model, "naive", state.N, k);
@@ -84,8 +84,8 @@
     }
     Tool.lineChart($("chart-cov"), {
       series: series, legend: true, height: 280,
-      hLines: [{ y: 0.95, label: "nominal 0.95", color: "bad" }],
-      xTitle: "seeds per question (K)", yTitle: "empirical coverage",
+      hLines: [{ y: 0.95, label: "target 95%", color: "bad" }],
+      xTitle: "runs per question (K)", yTitle: "empirical coverage",
       yMin: 0, yMax: 1, xTicks: KS,
       xFormat: function (x) { return String(x); }, yFormat: function (y) { return y.toFixed(2); }
     });
@@ -117,7 +117,7 @@
           points: rows.map(function (r) { return [r.K, r.predicted_width]; }) }
       ],
       legend: true, height: 260, xTicks: rows.map(function (r) { return r.K; }),
-      xTitle: "seeds per question (K), with N = 250 / K questions",
+      xTitle: "runs per question (K), with N = 250 / K questions",
       yTitle: "median interval width", yMin: 0,
       xFormat: function (x) { return String(x); }, yFormat: function (y) { return y.toFixed(2); }
     });
@@ -140,14 +140,16 @@
     }).join("");
   }
 
-  function drawAll() { renderCoverage(); renderBudget(); }
+  function drawAll() { if (document.getElementById("view-why") && document.getElementById("view-why").hidden) return; renderCoverage(); renderBudget(); }
+  window.ExplorerRedraw = function () { if (DATA) drawAll(); };
 
   function init() {
     fillSelect($("sel-model"),
       DATA.models.map(function (m) { return { value: m.slug, label: m.name }; }),
       state.model);
+    var NICE = { naive: "Naive: all runs independent", question_means: "Question means + t", cluster: "Cluster-robust by question", bootstrap: "Two-stage bootstrap", bayes: "Hierarchical Bayesian", seed_only: "These questions only (different target)" };
     var methodItems = DATA.methods.map(function (m) {
-      return { value: m.id, label: m.name };
+      return { value: m.id, label: NICE[m.id] || m.name };
     });
     fillSelect($("sel-method"), methodItems, state.method);
     fillSelect($("sel-bmethod"), methodItems, state.bmethod);
@@ -155,7 +157,7 @@
       return { value: n, label: n + " questions" };
     }), state.N);
     fillSelect($("sel-k"), KS.map(function (k) {
-      return { value: k, label: k + (k === 1 ? " seed" : " seeds") };
+      return { value: k, label: k + (k === 1 ? " run" : " runs") };
     }), state.K);
     renderVariance();
     drawAll();

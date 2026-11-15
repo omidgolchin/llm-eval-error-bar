@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Error Bars for LLM Evals — which intervals actually cover?</title>
+<title>Error Bars for LLM Evals: an honest interval for your eval score</title>
+<meta name="description" content="Paste per-question results from your LLM eval and get an error bar that is clustered by question, a fair comparison of two models, and whether more questions or more runs will narrow it. Checked against 6,000 real GSM8K runs.">
 <script src="kit-theme.js"></script>
 <link rel="stylesheet" href="kit.css">
 <link rel="stylesheet" href="tool.css">
@@ -11,43 +12,127 @@
   /* Tool-specific only (kit.css carries everything else). */
   .verdict-bad { color: var(--bad); }
   .verdict-good { color: var(--good); }
+  textarea.paste { width: 100%; min-height: 150px; font-family: var(--font-mono); font-size: var(--fs-small); color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px; box-sizing: border-box; resize: vertical; }
+  .why .card { margin-top: var(--sp-4); }
+  .why .card h3 { margin-top: 0; }
+  .count { color: var(--muted); font-size: var(--fs-caption); font-weight: 400; }
 </style>
 </head>
 <body>
 <main>
   <header class="kit-header">
     <div class="kit-header-top">
-      <p class="kit-kicker">Omid Golchin · Studies</p>
-      <button class="kit-theme-toggle" type="button" data-kit-theme-toggle
-        aria-label="Toggle light/dark mode">◐ Theme</button>
+      <p class="kit-kicker">Omid Golchin · Decision tools</p>
+      <button type="button" class="kit-theme-toggle" aria-pressed="false">◐ Theme</button>
     </div>
     <h1>Error Bars for LLM Evals</h1>
-    <p class="kit-tagline">Evaluate a model on N questions with K runs
-    (seeds) per question, report a “95%” interval — and the interval
-    covers the true accuracy far less than 95% of the time, if it is
-    the pooled interval everyone reaches for. Every number on this
-    page comes from 6,000 real GSM8K runs (3 models × 400 questions
-    × 5 seeds). Pick a design and see which intervals hold up.</p>
+    <p class="kit-tagline">Paste your eval's results, question by question. Get an error bar you can trust, a fair comparison of two models, and whether more questions or more repeated runs will narrow it.</p>
   </header>
 
-  <div class="card">
-    <h3>Try it: the coverage explorer</h3>
+  <div class="tool-modes" role="tablist" aria-label="What do you want to do?">
+    <button type="button" role="tab" id="tab-mine" class="active" aria-selected="true">My eval</button>
+    <button type="button" role="tab" id="tab-why" aria-selected="false">Why it matters: real runs</button>
+  </div>
+
+  <!-- ================= MY EVAL ================= -->
+  <section id="view-mine" role="tabpanel" aria-labelledby="tab-mine">
+    <div class="guide" aria-label="How to use this mode">
+      <ol class="steps">
+        <li><b>Paste one line per question</b> with the result of each run, for example <code>1 0 1</code> for three runs, or a count such as <code>2/3</code>.</li>
+        <li><b>Add a second model</b> (optional), on the same questions in the same order, to compare them.</li>
+        <li><b>Read the error bar</b> and what to buy next: the chart shows how fast extra questions and extra runs each narrow it.</li>
+      </ol>
+      <p class="also"><b>Also here:</b> <i>Why it matters</i> shows, on 6,000 real GSM8K runs, how often each kind of interval really contains the truth · <i>Copy summary</i> gives a sentence for a paper or a report · <i>Copy link</i> keeps your settings (not your data).</p>
+    </div>
+    <div class="work">
+      <form class="panel" id="f-mine" novalidate onsubmit="return false">
+        <div class="panel-head">
+          <h2>Your results</h2>
+          <select class="example" id="example" aria-label="Load an example"><option value="">Load example…</option></select>
+        </div>
+        <div class="field full"><label for="resA">Model A: one line per question <span class="count" id="cntA"></span> <button type="button" data-tip="format"></button></label>
+          <textarea class="paste" id="resA" spellcheck="false" placeholder="1 1 0&#10;0 0 0&#10;1 1 1&#10;..."></textarea>
+          <div class="hint">Each line: the runs of one question, 1 = correct, 0 = wrong (pass/fail and true/false also work), or a count like 2/3. A question id in the first column is fine.</div>
+          <p class="err" id="errA" hidden></p></div>
+        <div class="field full" style="margin-top:12px"><label for="resB">Model B <span class="muted">(optional, same questions, same order)</span> <span class="count" id="cntB"></span></label>
+          <textarea class="paste" id="resB" spellcheck="false" placeholder="Leave empty to check one model."></textarea>
+          <div class="hint">Comparing on the same questions lets each question cancel its own difficulty, which gives a much narrower interval for the difference.</div>
+          <p class="err" id="errB" hidden></p></div>
+        <div class="fields" style="margin-top:12px">
+          <div class="field full"><label for="level">Confidence level <button type="button" data-tip="level"></button></label>
+            <select id="level"><option value="0.9">90%</option><option value="0.95" selected>95% (standard)</option><option value="0.99">99%</option></select>
+            <div class="hint">How sure the interval should be to contain the true accuracy.</div></div>
+          <div class="field"><label for="nameA">Name of model A <span class="muted">(optional)</span></label><input id="nameA" type="text" placeholder="A"><div class="hint">Used in the verdict and the summary.</div></div>
+          <div class="field"><label for="nameB">Name of model B <span class="muted">(optional)</span></label><input id="nameB" type="text" placeholder="B"><div class="hint">Only used when comparing.</div></div>
+        </div>
+      </form>
+
+      <div>
+        <section class="panel verdict" id="verdict" aria-live="polite">
+          <p class="v-kicker" id="vKicker">Error bar</p>
+          <p class="v-title" id="vTitle">Paste results to start</p>
+          <p class="v-body" id="vBody">Or load an example from the menu: all three use real runs from this project.</p>
+          <div class="kpis" id="kpis"></div>
+          <div class="checks" id="checks"></div>
+        </section>
+        <div class="actions">
+          <button type="button" id="copySummary">Copy summary</button>
+          <button type="button" id="copyLink">Copy link</button>
+          <span class="toast" id="toast"></span>
+        </div>
+      </div>
+    </div>
+
+    <section class="panel" style="margin-top:16px">
+      <h2>What narrows it fastest <button type="button" data-tip="narrow"></button></h2>
+      <div class="svgchart" id="chart-next"></div>
+      <p class="chart-caption" id="next-caption"></p>
+    </section>
+
+    <details class="more">
+      <summary>How the error bar is computed <span class="sub">clustering, variance components, sources</span></summary>
+      <div class="more-body small">
+        <p><b>The estimate</b> is the share of correct answers over all runs. <b>The error bar</b> treats questions, not runs, as the independent units: runs of the same question share its difficulty, so they are not new evidence. The standard error is cluster-robust by question, with the small-sample factor N/(N−1) and a t critical value with N−1 degrees of freedom (Miller, 2024, "Adding Error Bars to Evals", arXiv:2411.00640).</p>
+        <div class="formula">SE² = N/(N−1) · Σᵢ (cᵢ − kᵢ·p̂)² / (Σᵢ kᵢ)²      interval = p̂ ± t₀.₉₇₅,N−1 · SE
+cᵢ = correct runs on question i,  kᵢ = runs on question i,  p̂ = Σcᵢ / Σkᵢ</div>
+        <p><b>Naive interval</b> (shown for contrast): a Wilson interval on all N×K answers as if they were independent. It is too narrow whenever questions differ in difficulty.</p>
+        <p><b>Questions or repeats.</b> A one-way analysis of variance splits the noise into σ²<sub>q</sub>, how much questions differ in difficulty, and σ²<sub>w</sub>, how much the same question flips between runs. The variance of the estimate at a design of N questions × K runs is σ²<sub>q</sub>/N + σ²<sub>w</sub>/(N·K): extra runs shrink only the second term, extra questions shrink both. The chart uses this formula with your estimated components. With one run per question the two cannot be separated.</p>
+        <div class="formula">Var(p̂) ≈ σ²q / N + σ²w / (N·K)
+σ²w = MS_within,   σ²q = max(0, (MS_between − MS_within) / K)</div>
+        <p><b>Two models</b>: for each question, B's accuracy minus A's; the interval is a t interval on those N differences. Pairing by question removes question difficulty from the comparison.</p>
+        <p class="footnote">This calculator is checked against the project's Python package (the same numbers to four decimals) in <code>tests/test_evalbar_js.py</code>. Everything runs in your browser; your results are never uploaded.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ================= WHY IT MATTERS ================= -->
+  <section id="view-why" class="why" role="tabpanel" aria-labelledby="tab-why" hidden>
+    <div class="guide" aria-label="How to use this mode">
+      <ol class="steps">
+        <li><b>The data</b>: 3 models answered the same 400 GSM8K math questions 5 times each (6,000 real runs, temperature 0.7).</li>
+        <li><b>The test</b>: draw thousands of smaller evals from those runs and check how often each interval method contains the model's true accuracy.</li>
+        <li><b>The lesson</b>: the pooled interval most people use covers far less than 95%, and repeated runs are a poor substitute for more questions.</li>
+      </ol>
+    </div>
+  <div class="card panel">
+    <h3>Do the intervals really cover? <button type="button" data-tip="coverage"></button></h3>
+    <p>Pick a model, an interval method and a design. Each number comes from thousands of subsamples of the real runs, so you can see how often each kind of "95%" interval actually contained the model's true accuracy.</p>
     <div class="ctl-grid">
       <label>Model
         <select id="sel-model"></select></label>
-      <label>Interval method
+      <label for="sel-method">Interval method <button type="button" data-tip="methods"></button>
         <select id="sel-method"></select></label>
       <label>Questions (N)
         <select id="sel-n"></select></label>
-      <label>Seeds per question (K)
+      <label>Runs per question (K)
         <select id="sel-k"></select></label>
     </div>
     <p class="muted" id="method-note"></p>
     <div class="stats">
-      <div class="stat"><span class="value" id="st-cov">–</span><span class="label">empirical coverage (nominal 0.95)</span></div>
-      <div class="stat"><span class="value" id="st-width">–</span><span class="label">median interval width</span></div>
-      <div class="stat"><span class="value" id="st-verdict">–</span><span class="label">verdict (PLAN §9 rule)</span></div>
-      <div class="stat"><span class="value" id="st-ref">–</span><span class="label">model's reference accuracy</span></div>
+      <div class="stat"><span class="value" id="st-cov">–</span><span class="label">how often it contained the truth (target 95%)</span></div>
+      <div class="stat"><span class="value" id="st-width">–</span><span class="label">typical interval width</span></div>
+      <div class="stat"><span class="value" id="st-verdict">–</span><span class="label">verdict <button type="button" data-tip="undercover"></button></span></div>
+      <div class="stat"><span class="value" id="st-ref">–</span><span class="label">model's true accuracy (all 2,000 runs)</span></div>
     </div>
     <p class="muted" id="cov-note"></p>
     <div class="callout callout--bad hidden" id="seedonly-note">
@@ -61,10 +146,9 @@
     <p class="chart-caption" id="cov-chart-note"></p>
   </div>
 
-  <div class="card">
-    <h3>The budget question: 250 calls — more questions, or more seeds?</h3>
-    <p>Fix the budget at 250 calls (the frozen plan's budget analysis)
-    and split it four ways: 250 questions × 1 seed, 125 × 2, 83 × 3,
+  <div class="card panel">
+    <h3>Same budget, split differently: more questions or more runs? <button type="button" data-tip="budget"></button></h3>
+    <p>Fix the budget at 250 model calls and split it four ways: 250 questions × 1 run, 125 × 2, 83 × 3,
     or 50 × 5. The chart shows the median interval width each split
     actually produced in the runs, against the width predicted from
     the variance components. Same model as above.</p>
@@ -81,13 +165,13 @@
     <p class="chart-caption" id="budget-note"></p>
   </div>
 
-  <div class="card">
-    <h3>Why questions beat seeds</h3>
+  <div class="card panel">
+    <h3>Why questions beat repeats <button type="button" data-tip="components"></button></h3>
     <p>An accuracy estimate varies for two reasons: questions differ
     in difficulty (between-question variance, σ²<sub>q</sub>), and the
     same question flips between runs (within-question variance,
     σ²<sub>w</sub>). The variance of the estimate at design (N, K) is
-    σ²<sub>q</sub>/N + σ²<sub>w</sub>/(N·K). Extra seeds only shrink
+    σ²<sub>q</sub>/N + σ²<sub>w</sub>/(N·K). Extra runs only shrink
     the second term; extra questions shrink both. For these models the
     first term dominates, so repeats are a poor buy:</p>
     <div class="table-scroll">
@@ -107,20 +191,17 @@
     model calls.</p>
   </div>
 
+  </section>
+
   <footer class="kit-footer">
-    <p class="kit-siblings"><span class="kit-siblings-label">More tools:</span>
-      <a href="https://omidgolchin.github.io/bayesian-ab-lab/">A/B Test Decision Tool</a> ·
-      <a href="https://omidgolchin.github.io/queue-simulator/">Call Center Staffing Planner</a> ·
-      <a href="https://omidgolchin.github.io/experiment-hazard-simulator/">Agent Eval Planner</a></p>
-    <p>Built by Omid Golchin · <a href="https://github.com/omidgolchin/llm-eval-error-bar">Write-up, frozen plan, code and runs</a> ·
-      <a href="https://github.com/omidgolchin/llm-eval-error-bar/blob/main/results/summary.md">Full results</a>.
-      Every number is precomputed from the saved runs; the page makes no model calls.</p>
-    <p class="small muted">References: Miller (2024), “Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations”,
-      arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to Solve Math Word Problems” (GSM8K), arXiv:2110.14168.
-      Models run through Together AI serverless, temperature 0.7, one fixed prompt.</p>
+    <p class="kit-siblings"></p>
+    <p>Built by Omid Golchin · <a href="https://github.com/omidgolchin/llm-eval-error-bar">Code, frozen plan, runs and tests</a> · <a href="https://github.com/omidgolchin/llm-eval-error-bar/blob/main/results/summary.md">Full results</a> · Everything runs in your browser; your results are never uploaded.</p>
+    <p class="small muted">References: Miller (2024), “Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations”, arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to Solve Math Word Problems” (GSM8K), arXiv:2110.14168. Runs through Together AI serverless, temperature 0.7, one fixed prompt.</p>
   </footer>
 </main>
 <script src="tool-common.js"></script>
+<script src="evalbar.js"></script>
+<script src="mine.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
