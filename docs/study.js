@@ -1,33 +1,10 @@
-/* Error Bars for LLM Evals — playground.
+/* Error Bars for LLM Evals: the study's results page.
  *
- * The "Why it matters" mode. Everything shown comes from data/results.json, exported from the
- * Stage 4 results (results/coverage_*.csv, results/budget.csv,
- * results/summary.md) by scripts/export_playground_data.py. No live
- * model calls, no numbers computed in the browser beyond formatting.
+ * Everything shown comes from data/results.json, exported from the study's
+ * results (results/coverage_*.csv, results/budget.csv, results/summary.md)
+ * by scripts/export_playground_data.py. No model calls, and no numbers
+ * computed in the browser beyond formatting.
  */
-
-/* Presentation only (2026-11-16 restructure): this page is one flow, not
- * two tabs. mine.js (frozen) still binds the tab buttons and hides the
- * inactive view at load, so here the tab strip is replaced by an in-page
- * anchor nav and both sections are shown, stacked: "Your eval" first,
- * "Why it matters: real runs" at the end. No values are computed here. */
-(function () {
-  "use strict";
-  var modes = document.querySelector(".tool-modes");
-  if (modes) {
-    var nav = document.createElement("nav");
-    nav.className = "eb-jump";
-    nav.setAttribute("aria-label", "On this page");
-    nav.innerHTML = '<a href="#view-mine">Your eval</a>' +
-      '<a href="#view-why">Why it matters: real runs</a>';
-    modes.replaceWith(nav);
-  }
-  ["view-mine", "view-why"].forEach(function (id) {
-    var s = document.getElementById(id);
-    if (s) s.hidden = false;
-  });
-})();
-
 (function () {
   "use strict";
 
@@ -163,7 +140,7 @@
     }).join("");
   }
 
-  function drawAll() { if (document.getElementById("view-why") && document.getElementById("view-why").hidden) return; renderCoverage(); renderBudget(); }
+  function drawAll() { renderCoverage(); renderBudget(); }
   window.ExplorerRedraw = function () { if (DATA) drawAll(); };
 
   function init() {
@@ -202,6 +179,14 @@
     });
   }
 
+  Tool.explain({
+    coverage: { t: "Coverage", d: "If you build a 95% interval many times on different samples, it should contain the true value about 95% of the time. Here the 'true value' is the model's accuracy over all 400 questions × 5 runs, and each sample is a smaller eval drawn from them." },
+    methods: { t: "The interval methods", d: "<b>Naive</b>: all N×K answers as independent (the common mistake). <b>Question means + t</b> and <b>cluster-robust</b>: treat questions as the units (what this study recommends). <b>Two-stage bootstrap</b>: resample questions, then runs. <b>Hierarchical Bayesian</b>: a model with a difficulty per question. <b>Seed-only</b>: answers a different question, accuracy on these exact questions." },
+    undercover: { t: "Verdict", d: "An interval 'under-covers' when its coverage is below 93% and even the top of its Monte Carlo range is below 95%: it is too narrow for sure, not just by chance. The rule was fixed in the project's plan before the runs." },
+    budget: { t: "Fixed budget", d: "The same 250 model calls, split into more questions with fewer runs each, or fewer questions with more runs. The solid line is what the runs produced; the dashed line is the variance-components prediction, which tracks it closely." },
+    components: { t: "Variance components", d: "Accuracy estimates are noisy for two reasons: questions differ in difficulty (σ²q) and the same question flips between runs (σ²w). A one-way analysis of variance on the runs estimates both." }
+  });
+
   fetch("data/results.json")
     .then(function (r) { return r.json(); })
     .then(function (d) { DATA = d; init(); })
@@ -210,118 +195,4 @@
         "Could not load data/results.json — serve this folder over HTTP" +
         " (e.g. python3 -m http.server) rather than opening the file directly.";
     });
-})();
-
-/* Presentation only: the verdict drawn as a horizontal error-bar strip
- * (one model) or forest rows (two models, plus the difference). Every
- * number is read back from the verdict text and KPIs that mine.js has
- * just rendered — nothing is recomputed here. Upload buttons fill the
- * paste boxes from a local file and fire the same "input" event that
- * typing does, so mine.js does all the parsing as usual. */
-(function () {
-  "use strict";
-  function $(id) { return document.getElementById(id); }
-  function num(s) { return parseFloat(String(s).replace(/−/g, "-")); }
-  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
-
-  function stripRow(x, y, name, est, lo, hi, valLabel) {
-    var s = "";
-    if (name) s += '<text class="strip-name" x="0" y="' + (y + 4) + '">' + esc(name) + "</text>";
-    s += '<line class="strip-track" x1="' + x(0) + '" y1="' + y + '" x2="' + x(100) + '" y2="' + y + '"/>';
-    s += '<line class="strip-bar" x1="' + x(lo) + '" y1="' + y + '" x2="' + x(hi) + '" y2="' + y + '"/>';
-    s += '<line class="strip-cap" x1="' + x(lo) + '" y1="' + (y - 6) + '" x2="' + x(lo) + '" y2="' + (y + 6) + '"/>';
-    s += '<line class="strip-cap" x1="' + x(hi) + '" y1="' + (y - 6) + '" x2="' + x(hi) + '" y2="' + (y + 6) + '"/>';
-    s += '<circle class="strip-dot" cx="' + x(est) + '" cy="' + y + '" r="5"/>';
-    if (valLabel) s += '<text class="strip-val" x="' + Math.min(x(hi) + 9, 634) + '" y="' + (y + 4) + '">' + esc(valLabel) + "</text>";
-    return s;
-  }
-
-  function renderStrip() {
-    var host = $("ebStrip");
-    if (!host) return;
-    var title = $("vTitle").textContent || "";
-    var body = $("vBody").textContent || "";
-    var vals = document.querySelectorAll("#kpis .k-val");
-    host.innerHTML = "";
-    if (/Paste results/.test(title) || !vals.length) return;
-
-    var m1 = body.match(/between ([\d.]+)% and ([\d.]+)%/);
-    if (m1) {
-      var est = num(vals[0].textContent), lo = num(m1[1]), hi = num(m1[2]);
-      var W = 640, L = 8, R = 632;
-      var x = function (v) { return L + (v / 100) * (R - L); };
-      host.innerHTML =
-        '<svg viewBox="0 0 ' + W + ' 62" role="img" aria-label="Error bar from ' + lo.toFixed(1) + '% to ' + hi.toFixed(1) + '%, estimate ' + est.toFixed(1) + '%">' +
-        '<text class="strip-val" x="' + x(est) + '" y="12" text-anchor="middle">' + est.toFixed(1) + "%</text>" +
-        stripRow(x, 30, "", est, lo, hi, "") +
-        '<text x="' + x(lo) + '" y="52" text-anchor="middle">' + lo.toFixed(1) + "%</text>" +
-        '<text x="' + x(hi) + '" y="52" text-anchor="middle">' + hi.toFixed(1) + "%</text>" +
-        '<text x="' + L + '" y="52">0%</text>' +
-        '<text x="' + R + '" y="52" text-anchor="end">100%</text></svg>';
-      return;
-    }
-
-    var scores = [];
-    var re = /scores ([\d.]+)% ± ([\d.]+)/g, sm;
-    while ((sm = re.exec(body)) !== null && scores.length < 2) {
-      scores.push({ est: num(sm[1]), half: num(sm[2]) });
-    }
-    var dm = body.match(/interval: ([+−][\d.]+) to ([+−][\d.]+)\)/);
-    if (scores.length === 2 && dm) {
-      var nameA = ($("nameA").value.trim() || "A"), nameB = ($("nameB").value.trim() || "B");
-      var L2 = 8, R2 = 560, W2 = 640;
-      var xf = function (v) { return L2 + (v / 100) * (R2 - L2); };
-      function forestRow(name, sc, yName, yBar) {
-        return '<text class="strip-name" x="0" y="' + yName + '">' + esc(name) + "</text>" +
-          stripRow(xf, yBar, "", sc.est, sc.est - sc.half, sc.est + sc.half,
-            sc.est.toFixed(1) + "% ± " + sc.half.toFixed(1));
-      }
-      var rows = forestRow(nameA, scores[0], 12, 30) + forestRow(nameB, scores[1], 62, 80);
-      var diff = num(vals[0].textContent), dlo = num(dm[1]), dhi = num(dm[2]);
-      var M = Math.max(Math.abs(dlo), Math.abs(dhi), Math.abs(diff), 1) * 1.2;
-      var xd = function (v) { return 320 + (v / M) * 300; };
-      host.innerHTML =
-        '<svg viewBox="0 0 ' + W2 + ' 104" role="img" aria-label="Forest plot: ' + esc(nameA) + " " + scores[0].est.toFixed(1) + "%, " + esc(nameB) + " " + scores[1].est.toFixed(1) + '%">' + rows +
-        '<text x="' + L2 + '" y="102">0%</text><text x="' + R2 + '" y="102" text-anchor="end">100%</text></svg>' +
-        '<svg viewBox="0 0 640 58" role="img" aria-label="Difference ' + esc(nameB) + " minus " + esc(nameA) + ": " + diff.toFixed(1) + ' points">' +
-        '<text class="strip-name" x="0" y="14">' + esc((nameA.length + nameB.length > 24 ? "Difference" : nameB + " − " + nameA) + ", points") + "</text>" +
-        '<line class="strip-zero" x1="' + xd(0) + '" y1="20" x2="' + xd(0) + '" y2="44"/>' +
-        '<line class="strip-bar" x1="' + xd(dlo) + '" y1="32" x2="' + xd(dhi) + '" y2="32"/>' +
-        '<line class="strip-cap" x1="' + xd(dlo) + '" y1="26" x2="' + xd(dlo) + '" y2="38"/>' +
-        '<line class="strip-cap" x1="' + xd(dhi) + '" y1="26" x2="' + xd(dhi) + '" y2="38"/>' +
-        '<circle class="strip-dot" cx="' + xd(diff) + '" cy="32" r="5"/>' +
-        '<text x="' + xd(dlo) + '" y="56" text-anchor="middle">' + dlo.toFixed(1) + "</text>" +
-        '<text class="strip-val" x="' + xd(diff) + '" y="14" text-anchor="middle">' + (diff >= 0 ? "+" : "−") + Math.abs(diff).toFixed(1) + "</text>" +
-        '<text x="' + xd(dhi) + '" y="56" text-anchor="middle">' + dhi.toFixed(1) + "</text></svg>";
-    }
-  }
-
-  if (window.MutationObserver) {
-    var pending = false;
-    var obs = new MutationObserver(function () {
-      if (pending) return;
-      pending = true;
-      setTimeout(function () { pending = false; renderStrip(); }, 30);
-    });
-    ["vTitle", "vBody", "kpis"].forEach(function (id) {
-      var el = $(id);
-      if (el) obs.observe(el, { childList: true, subtree: true, characterData: true });
-    });
-  }
-  setTimeout(renderStrip, 900);
-
-  [["fileA", "resA"], ["fileB", "resB"]].forEach(function (pair) {
-    var input = $(pair[0]);
-    if (!input) return;
-    input.addEventListener("change", function () {
-      var f = input.files && input.files[0];
-      if (!f) return;
-      f.text().then(function (t) {
-        var ta = $(pair[1]);
-        ta.value = t;
-        ta.dispatchEvent(new Event("input", { bubbles: true }));
-        input.value = "";
-      });
-    });
-  });
 })();
