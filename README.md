@@ -72,7 +72,11 @@ on these exact questions — and is always labelled as such.
 - **Frozen plan:** the design, methods, and decision rules were
   frozen in PLAN.md (with a SHA-256 freeze manifest) before the
   main run, and no definition was changed afterwards — the
-  amendment log is empty.
+  amendment log is empty. Checked 2026-11-16: the plan, config,
+  prompt, grading and interval code still match their frozen
+  hashes; only `src/errorbars/analyze.py` (the reporting and
+  figure code) has changed since, and the current code
+  regenerates the published results.
 
 ## Headline results: coverage at 50 × 5
 
