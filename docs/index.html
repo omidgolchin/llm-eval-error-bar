@@ -13,6 +13,7 @@
   .verdict-bad { color: var(--bad); }
   .verdict-good { color: var(--good); }
   textarea.paste { width: 100%; min-height: 150px; font-family: var(--font-mono); font-size: var(--fs-small); color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px; box-sizing: border-box; resize: vertical; }
+  textarea.paste-main { min-height: 220px; }
   .why .card { margin-top: var(--sp-4); }
   .why .card h3 { margin-top: 0; }
   .count { color: var(--muted); font-size: var(--fs-caption); font-weight: 400; }
@@ -27,6 +28,7 @@
     </div>
     <h1>Error Bars for LLM Evals</h1>
     <p class="kit-tagline">Paste your eval's results, question by question. Get an error bar you can trust, a fair comparison of two models, and whether more questions or more repeated runs will narrow it.</p>
+    <p class="howto"><b>How to use:</b> paste one line per question — <code>1 0 1</code> for three runs, or a count like <code>2/3</code> — add a second model on the same questions to compare them, and read the error bar below. Or load an example: all three use real runs from this project.</p>
   </header>
 
   <div class="tool-modes" role="tablist" aria-label="What do you want to do?">
@@ -34,29 +36,23 @@
     <button type="button" role="tab" id="tab-why" aria-selected="false">Why it matters: real runs</button>
   </div>
 
-  <!-- ================= MY EVAL ================= -->
-  <section id="view-mine" role="tabpanel" aria-labelledby="tab-mine">
-    <div class="guide" aria-label="How to use this mode">
-      <ol class="steps">
-        <li><b>Paste one line per question</b> with the result of each run, for example <code>1 0 1</code> for three runs, or a count such as <code>2/3</code>.</li>
-        <li><b>Add a second model</b> (optional), on the same questions in the same order, to compare them.</li>
-        <li><b>Read the error bar</b> and what to buy next: the chart shows how fast extra questions and extra runs each narrow it.</li>
-      </ol>
-      <p class="also"><b>Also here:</b> <i>Why it matters</i> shows, on 6,000 real GSM8K runs, how often each kind of interval really contains the truth · <i>Copy summary</i> gives a sentence for a paper or a report · <i>Copy link</i> keeps your settings (not your data).</p>
-    </div>
-    <div class="work">
+  <!-- ================= MY EVAL (paste-first, single column) ================= -->
+  <section id="view-mine" aria-label="Your eval">
+    <div class="eb-flow">
       <form class="panel" id="f-mine" novalidate onsubmit="return false">
         <div class="panel-head">
           <h2>Your results</h2>
           <select class="example" id="example" aria-label="Load an example"><option value="">Load example…</option></select>
         </div>
         <div class="field full"><label for="resA">Model A: one line per question <span class="count" id="cntA"></span> <button type="button" data-tip="format"></button></label>
-          <textarea class="paste" id="resA" spellcheck="false" placeholder="1 1 0&#10;0 0 0&#10;1 1 1&#10;..."></textarea>
+          <textarea class="paste paste-main" id="resA" spellcheck="false" placeholder="1 1 0&#10;0 0 0&#10;1 1 1&#10;..."></textarea>
           <div class="hint">Each line: the runs of one question, 1 = correct, 0 = wrong (pass/fail and true/false also work), or a count like 2/3. A question id in the first column is fine.</div>
+          <p class="upload-row"><label for="fileA">…or upload a text file into model A:</label> <input type="file" id="fileA" accept=".txt,.csv,.tsv,text/plain"></p>
           <p class="err" id="errA" hidden></p></div>
         <div class="field full" style="margin-top:12px"><label for="resB">Model B <span class="muted">(optional, same questions, same order)</span> <span class="count" id="cntB"></span></label>
           <textarea class="paste" id="resB" spellcheck="false" placeholder="Leave empty to check one model."></textarea>
           <div class="hint">Comparing on the same questions lets each question cancel its own difficulty, which gives a much narrower interval for the difference.</div>
+          <p class="upload-row"><label for="fileB">…or upload a text file into model B:</label> <input type="file" id="fileB" accept=".txt,.csv,.tsv,text/plain"></p>
           <p class="err" id="errB" hidden></p></div>
         <div class="fields" style="margin-top:12px">
           <div class="field full"><label for="level">Confidence level <button type="button" data-tip="level"></button></label>
@@ -67,27 +63,28 @@
         </div>
       </form>
 
-      <div>
-        <section class="panel verdict" id="verdict" aria-live="polite">
-          <p class="v-kicker" id="vKicker">Error bar</p>
-          <p class="v-title" id="vTitle">Paste results to start</p>
-          <p class="v-body" id="vBody">Or load an example from the menu: all three use real runs from this project.</p>
-          <div class="kpis" id="kpis"></div>
-          <div class="checks" id="checks"></div>
-        </section>
-        <div class="actions">
-          <button type="button" id="copySummary">Copy summary</button>
-          <button type="button" id="copyLink">Copy link</button>
-          <span class="toast" id="toast"></span>
-        </div>
+      <section class="panel verdict" id="verdict" aria-live="polite">
+        <p class="v-kicker" id="vKicker">Error bar</p>
+        <p class="v-title" id="vTitle">Paste results to start</p>
+        <p class="v-body" id="vBody">Or load an example from the menu: all three use real runs from this project.</p>
+        <div class="kpis" id="kpis"></div>
+        <div class="svgchart eb-strip" id="ebStrip" role="img" aria-label="The error bar drawn as a horizontal strip"></div>
+        <div class="checks" id="checks"></div>
+        <p class="result-note">Note — the interval treats questions, not runs, as the independent units (Miller, 2024). The checks above quote the usual pooled interval for contrast; <a href="#view-why">Why it matters</a>, at the end of this page, shows what that choice does to coverage on real runs.</p>
+      </section>
+      <div class="actions">
+        <button type="button" id="copySummary">Copy summary</button>
+        <button type="button" id="copyLink">Copy link</button>
+        <span class="toast" id="toast"></span>
       </div>
-    </div>
 
-    <section class="panel" style="margin-top:16px">
-      <h2>What narrows it fastest <button type="button" data-tip="narrow"></button></h2>
-      <div class="svgchart" id="chart-next"></div>
-      <p class="chart-caption" id="next-caption"></p>
-    </section>
+      <section class="panel">
+        <h2>What narrows it fastest <button type="button" data-tip="narrow"></button></h2>
+        <div class="svgchart" id="chart-next"></div>
+        <p class="chart-caption" id="next-caption"></p>
+        <p class="result-note">Note — both lines spend the same total number of runs. The prediction uses your own split of the noise into question difficulty and run-to-run flips; the method is written out in “How the error bar is computed”, just below.</p>
+      </section>
+    </div>
 
     <details class="more">
       <summary>How the error bar is computed <span class="sub">clustering, variance components, sources</span></summary>
@@ -105,15 +102,10 @@ cᵢ = correct runs on question i,  kᵢ = runs on question i,  p̂ = Σcᵢ / �
     </details>
   </section>
 
-  <!-- ================= WHY IT MATTERS ================= -->
-  <section id="view-why" class="why" role="tabpanel" aria-labelledby="tab-why" hidden>
-    <div class="guide" aria-label="How to use this mode">
-      <ol class="steps">
-        <li><b>The data</b>: 3 models answered the same 400 GSM8K math questions 5 times each (6,000 real runs, temperature 0.7).</li>
-        <li><b>The test</b>: draw thousands of smaller evals from those runs and check how often each interval method contains the model's true accuracy.</li>
-        <li><b>The lesson</b>: the pooled interval most people use covers far less than 95%, and repeated runs are a poor substitute for more questions.</li>
-      </ol>
-    </div>
+  <!-- ================= WHY IT MATTERS (end of page) ================= -->
+  <section id="view-why" class="why" aria-label="Why it matters: real runs">
+    <h2 class="why-h">Why it matters: real runs</h2>
+    <p class="why-intro">The evidence behind the tool: 3 models answered the same 400 GSM8K math questions 5 times each — 6,000 real runs, temperature 0.7. The explorer draws thousands of smaller evals from those runs and checks how often each kind of interval really contains the model's true accuracy. The lesson: the pooled interval most people use covers far less than 95%, and repeated runs are a poor substitute for more questions.</p>
   <div class="card panel">
     <h3>Do the intervals really cover? <button type="button" data-tip="coverage"></button></h3>
     <p>Pick a model, an interval method and a design. Each number comes from thousands of subsamples of the real runs, so you can see how often each kind of "95%" interval actually contained the model's true accuracy.</p>

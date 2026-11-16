@@ -32,3 +32,4 @@ sec.4) and the $10 guard. Prices used, per 1M tokens (input, output):
 Qwen-2-1.5B-Instruct ($0.10, $0.10); Muse-Glimmer-30B ($0.35, $1.50);
 Inkling ($1.00, $4.05). The 5 failed calls (API timeouts, graded
 incorrect per PLAN.md sec.6) returned no usage and are counted as $0.
+- 2026-11-16: structural-variation restructure of the playground page (single-column, paste-first layout; presentation only, no model calls) — $0.00 API spend.
