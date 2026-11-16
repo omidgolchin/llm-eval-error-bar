@@ -75,8 +75,8 @@ on these exact questions — and is always labelled as such.
   amendment log is empty. Checked 2026-11-16: the plan, config,
   prompt, grading and interval code still match their frozen
   hashes; only `src/errorbars/analyze.py` (the reporting and
-  figure code) has changed since, and the current code
-  regenerates the published results.
+  figure code) has changed since. The raw-runs file it reads
+  is not in git, so that check could not be rerun here.
 
 ## Headline results: coverage at 50 × 5
 
