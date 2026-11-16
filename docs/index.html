@@ -119,13 +119,17 @@ cᵢ = correct runs on question i,  kᵢ = runs on question i,  p̂ = Σcᵢ / �
     <p>Pick a model, an interval method and a design. Each number comes from thousands of subsamples of the real runs, so you can see how often each kind of "95%" interval actually contained the model's true accuracy.</p>
     <div class="ctl-grid">
       <label>Model
-        <select id="sel-model"></select></label>
+        <select id="sel-model" aria-describedby="h-model"></select>
+        <span class="hint ctl-hint" id="h-model">Whose real runs to resample. Each model answered the same GSM8K math questions many times.</span></label>
       <label for="sel-method">Interval method <button type="button" data-tip="methods"></button>
-        <select id="sel-method"></select></label>
+        <select id="sel-method" aria-describedby="h-method"></select>
+        <span class="hint ctl-hint" id="h-method">How the 95% interval is built. The usual one treats every answer as independent; the clustered one groups the runs of each question.</span></label>
       <label>Questions (N)
-        <select id="sel-n"></select></label>
+        <select id="sel-n" aria-describedby="h-n"></select>
+        <span class="hint ctl-hint" id="h-n">How many questions each simulated eval draws from the real ones.</span></label>
       <label>Runs per question (K)
-        <select id="sel-k"></select></label>
+        <select id="sel-k" aria-describedby="h-k"></select>
+        <span class="hint ctl-hint" id="h-k">How many of the real runs of each question it uses.</span></label>
     </div>
     <p class="muted" id="method-note"></p>
     <div class="stats">
@@ -154,7 +158,8 @@ cᵢ = correct runs on question i,  kᵢ = runs on question i,  p̂ = Σcᵢ / �
     the variance components. Same model as above.</p>
     <div class="ctl-grid">
       <label>Interval method
-        <select id="sel-bmethod"></select></label>
+        <select id="sel-bmethod" aria-describedby="h-bmethod"></select>
+        <span class="hint ctl-hint" id="h-bmethod">How the interval behind each width is built, as in the chart above.</span></label>
     </div>
     <div class="stats">
       <div class="stat"><span class="value" id="st-best">–</span><span class="label">narrowest split</span></div>
@@ -195,7 +200,7 @@ cᵢ = correct runs on question i,  kᵢ = runs on question i,  p̂ = Σcᵢ / �
 
   <footer class="kit-footer">
     <p class="kit-siblings"></p>
-    <p>Built by Omid Golchin · <a href="https://github.com/omidgolchin/llm-eval-error-bar">Code, frozen plan, runs and tests</a> · <a href="https://github.com/omidgolchin/llm-eval-error-bar/blob/main/results/summary.md">Full results</a> · Everything runs in your browser; your results are never uploaded.</p>
+    <p>Built by Omid Golchin · <a href="https://github.com/omidgolchin/llm-eval-error-bars">Code, frozen plan, runs and tests</a> · <a href="https://github.com/omidgolchin/llm-eval-error-bars/blob/main/results/summary.md">Full results</a> · Everything runs in your browser; your results are never uploaded.</p>
     <p class="small muted">References: Miller (2024), “Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations”, arXiv:2411.00640; Cobbe et al. (2021), “Training Verifiers to Solve Math Word Problems” (GSM8K), arXiv:2110.14168. Runs through Together AI serverless, temperature 0.7, one fixed prompt.</p>
   </footer>
 </main>

@@ -6,7 +6,7 @@ For anyone who reports an LLM eval score: paste your results, one line per quest
 
 ![The tool on a desktop: the three-step guide, the pasted results with a hint under each input, and the error bar with its checks](docs/screenshots/desktop.png)
 
-**Use it:** https://omidgolchin.github.io/llm-eval-error-bar/ (runs in your browser; your results are never uploaded)
+**Use it:** https://omidgolchin.github.io/llm-eval-error-bars/ (runs in your browser; your results are never uploaded)
 
 ## What it does
 

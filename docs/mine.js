@@ -170,6 +170,7 @@
     var ex = EXAMPLES[i]; if (!ex) return;
     state.ex = String(i); $("example").value = String(i);
     $("resA").value = ex.a; $("resB").value = ex.b || ""; $("nameA").value = ex.nameA || ""; $("nameB").value = ex.nameB || "";
+    Tool.exampleWatch($("f-mine"), "<b>" + ex.label + "</b>. Paste your own results over it; the error bar updates as you type.");
     run();
   }
   var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(drawChart, 150); });
