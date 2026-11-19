@@ -29,14 +29,16 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def _surrogate_key() -> str | None:
-    """Fallback for running inside Muse: fetch a credential surrogate for
-    the connected Together account. The surrogate is not the real key;
-    Muse's egress layer swaps in the real key for api.together.xyz.
+    """Fallback when a credential helper is configured (CREDENTIAL_HELPER_DIR):
+    fetch a surrogate key, which that environment's proxy exchanges for
+    the real key.
     Returns None when that machinery is not present (e.g. a plain local
     checkout), in which case TOGETHER_API_KEY must be set instead."""
     import sys
 
-    bin_dir = "/opt/muse/skills/custom-connector-setup/bin"
+    bin_dir = os.environ.get("CREDENTIAL_HELPER_DIR", "")
+    if not bin_dir:
+        return None
     try:
         if bin_dir not in sys.path:
             sys.path.insert(0, bin_dir)

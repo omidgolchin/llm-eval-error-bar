@@ -129,8 +129,8 @@ AI serverless (`https://api.together.xyz/v1`).
   never written to this file, and the runner refuses a real run if
   placeholders are found in it.
 - **API key handling:** the key is read from the `TOGETHER_API_KEY`
-  environment variable (or a git-ignored `.env`); inside Muse it is
-  supplied through the connected Together account's credential surrogate.
+  environment variable (or a git-ignored `.env`); where a credential helper is configured
+  (CREDENTIAL_HELPER_DIR), it supplies a surrogate key instead.
   It is never printed, logged, or committed.
 - **Grading** (`src/errorbars/grade.py`, exactly as implemented): take the
   first number after the last `####` in the response; if there is no
